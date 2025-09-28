@@ -1,0 +1,99 @@
+---
+const links = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/About" },
+  { name: "Portfolio", href: "/protfolio" }
+
+];
+---
+
+<nav 
+  id="navbar"
+  class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[80%] 
+         bg-transparent text-white rounded-full shadow-lg transition-all duration-300"
+>
+  <div class="px-6">
+    <div class="flex justify-start h-14 items-center">
+      
+      <!-- Links (desktop) -->
+      <div class="hidden md:flex space-x-6">
+        {links.map(link => (
+          <a 
+            href={link.href} 
+            class="text-gray-200 hover:text-white transition"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+
+      <!-- Botón menú móvil -->
+      <button 
+        id="menu-btn"
+        class="md:hidden ml-auto p-2 rounded-md text-gray-200 hover:bg-white/10"
+        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#2B3640] rounded-b-2xl">
+    <div class="px-4 pt-2 pb-3 space-y-2">
+      {links.map(link => (
+        <a 
+          href={link.href} 
+          class="block px-3 py-2 rounded-md text-gray-200 hover:bg-white/10"
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const nav = document.getElementById("navbar");
+    
+    if (window.scrollY > 50) {
+      // Cuando haces scroll, se vuelve medio transparente con blur
+      nav.classList.add("bg-[#2B3640]/70", "backdrop-blur-md");
+      nav.classList.remove("bg-transparent");
+    } else {
+      // Cuando está quieto, completamente transparente
+      nav.classList.add("bg-transparent");
+      nav.classList.remove("bg-[#2B3640]/70", "backdrop-blur-md");
+    }
+  });
+</script>
+
+ <style>
+  a{
+    padding: 0 2px;
+    text-decoration: none;
+    color:white;
+    background: transparent;
+    border: none;
+    position: relative;
+    transition: 0.5s ease;
+  }
+  a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #d1520e;
+    transition: 0.5s ease;
+}
+a:hover{
+    color: #d1520e;
+    transition-delay: 0.1s;
+}
+a:hover:before{
+    width: 100%;
+}
+ </style>
