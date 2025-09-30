@@ -3,7 +3,6 @@ const links = [
   { name: "Home", href: "/" },
   { name: "About", href: "/About" },
   { name: "Portfolio", href: "/protfolio" }
-
 ];
 ---
 
@@ -53,21 +52,25 @@ const links = [
   </div>
 </nav>
 
+<!-- Script -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const nav = document.getElementById("navbar");
-  if (!nav) return;
+  const navbar = document.getElementById("navbar");
+  let scrollTimeout: ReturnType<typeof setTimeout> | undefined;
 
-  const onScroll = () => {
-    // toggle con booleano: añade 'scrolled' si scrollY > 50, la quita si no
-    nav.classList.toggle("scrolled", window.scrollY > 50);
-  };
+  window.addEventListener("scroll", () => {
+    if (!navbar) return;
+    // Cuando empieza a scrollear → aplica fondo medio transparente
+    navbar.classList.remove("bg-transparent");
+    navbar.classList.add("bg-black/80");
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll(); // inicializa el estado al cargar (por si la página ya está scrolleada)
-});
+    // Si deja de scrollear → después de 200ms vuelve a transparente
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      navbar.classList.remove("bg-black/80");
+      navbar.classList.add("bg-transparent");
+    }, 500);
+  });
 </script>
-
 
  <style>
   a{
