@@ -1,49 +1,48 @@
 ---
 const links = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/About" },
-  { name: "Portfolio", href: "/protfolio" }
+  { name: "About", href: "#About" },
+  { name: "Portfolio", href: "#Portfolio" }
 ];
 ---
 
 <nav 
   id="navbar"
-  class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[80%] 
-         bg-transparent text-white rounded-full shadow-lg transition-all duration-300"
+  class="fixed top-4 left-1/2 -translate-x-1/2 z-50 
+         w-auto px-6 py-2 
+         bg-black/50 backdrop-blur-md text-white rounded-full shadow-lg transition-all duration-300"
 >
-  <div class="px-6">
-    <div class="flex justify-start h-14 items-center">
-      
-      <!-- Links (desktop) -->
-      <div class="hidden md:flex space-x-6">
-        {links.map(link => (
-          <a 
-            href={link.href} 
-            class="text-gray-200 hover:text-white transition"
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
-
-      <!-- Botón menú móvil -->
-      <button 
-        id="menu-btn"
-        class="md:hidden ml-auto p-2 rounded-md text-gray-200 hover:bg-white/10"
-        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-      >
-        ☰
-      </button>
+  <div class="flex items-center justify-center space-x-6">
+    
+    <!-- Links (desktop) -->
+    <div class="hidden md:flex space-x-6">
+      {links.map(link => (
+        <a 
+          href={link.href} 
+          class="text-gray-200 hover:text-[#d1520e] transition"
+        >
+          {link.name}
+        </a>
+      ))}
     </div>
+
+    <!-- Botón menú móvil -->
+    <button 
+      id="menu-btn"
+      class="md:hidden p-2 rounded-md text-gray-200 hover:bg-white/10"
+      onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+    >
+      ☰
+    </button>
   </div>
 
   <!-- Menú móvil -->
-  <div id="mobile-menu" class="hidden md:hidden bg-[#2B3640] rounded-b-2xl">
+  <div id="mobile-menu" class="hidden md:hidden bg-black/90 rounded-b-2xl mt-2">
     <div class="px-4 pt-2 pb-3 space-y-2">
       {links.map(link => (
         <a 
           href={link.href} 
-          class="block px-3 py-2 rounded-md text-gray-200 hover:bg-white/10"
+          class="block px-3 py-2 rounded-md text-gray-200 hover:bg-[#d1520e] transition"
         >
           {link.name}
         </a>
@@ -52,25 +51,6 @@ const links = [
   </div>
 </nav>
 
-<!-- Script -->
-<script>
-  const navbar = document.getElementById("navbar");
-  let scrollTimeout: ReturnType<typeof setTimeout> | undefined;
-
-  window.addEventListener("scroll", () => {
-    if (!navbar) return;
-    // Cuando empieza a scrollear → aplica fondo medio transparente
-    navbar.classList.remove("bg-transparent");
-    navbar.classList.add("bg-black/80");
-
-    // Si deja de scrollear → después de 200ms vuelve a transparente
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      navbar.classList.remove("bg-black/80");
-      navbar.classList.add("bg-transparent");
-    }, 500);
-  });
-</script>
 
  <style>
   a{
