@@ -10,8 +10,9 @@
     class="absolute inset-0 w-full h-full object-cover"
   />
 
-  <!-- Overlay oscuro -->
-  <div class="absolute inset-0 bg-black/50"></div>
+ <!-- Overlay degradado (oscurece parte inferior) -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent"></div>
+
 
   <!-- Contenido del Hero -->
   <section class="h-screen flex items-center relative">
@@ -30,13 +31,18 @@
             href="#portfolio" 
             class="bg-transparent hover:bg-[#d1520e] border-2 border-white text-white px-6 py-3 rounded-full font-medium transition"
           >
-            Portfolio
+            <span class="material-symbols-outlined">
+assignment
+</span>Portfolio
           </a>
           <a 
             href="/curriculum.pdf" 
             class="bg-transparent hover:bg-[#d1520e] border-2 border-white text-white px-6 py-3 rounded-full font-medium transition"
             target="_blank"
           >
+          <span class="material-symbols-outlined">
+download
+</span>
             Curriculum
           </a>
         </div>
