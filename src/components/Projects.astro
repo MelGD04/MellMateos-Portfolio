@@ -1,27 +1,48 @@
 ---
 ---
-<section id="Projects" class="relative bg-[#1a1a1a] text-white h-screen flex items-center justify-center">
+<section id="Projects" class="relative bg-[#0c0c0c] text-white h-screen">
+
+  <!-- Overlay oscuro -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <section class="min-h-screen flex items-start">
   <div class="w-[90%] md:w-[80%] mx-auto px-6">
-    <div class="relative z-10 flex flex-col items-center text-center h-full pt-20 space-y-6">
-      <h1 class="text-5xl md:text-7xl font-bold underline decoration-[#d1520e] decoration-2 mb-4">
+    <div class="relative z-10 flex flex-col items-start text-left pt-20 space-y-6">
+
+      <!-- Título -->
+      <h1 class="text-5xl md:text-7xl font-bold underline decoration-[#d1520e] decoration-2">
         Projects
       </h1>
-      <p class="text-lg text-gray-300 max-w-2xl mb-8">
-        texto
-      </p>
-      <!-- Ejemplo de proyecto -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-black/60 rounded-lg p-6 shadow-lg">
-          <h2 class="text-2xl font-semibold mb-2">Proyecto 1</h2>
-          <p class="text-gray-400 mb-2">Descripción breve del proyecto.</p>
-          <a href="#" class="text-[#d1520e] hover:underline">Ver más</a>
-        </div>
-        <div class="bg-black/60 rounded-lg p-6 shadow-lg">
-          <h2 class="text-2xl font-semibold mb-2">Proyecto 2</h2>
-          <p class="text-gray-400 mb-2">Descripción breve del proyecto.</p>
-          <a href="#" class="text-[#d1520e] hover:underline">Ver más</a>
-        </div>
+
+
+      <!-- From Uiverse.io by Yaya12085 --> 
+  <div class="relative flex w-80 flex-col rounded-xl bg-[#181818]/70 bg-clip-border text-white shadow-lg border-2 border-[#d1520e] mt-10">
+      <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-clip-border text-white shadow-lg">
+  <img 
+    src="/images/fp.png" 
+    alt="Flashcards Plataform" 
+    class="object-cover w-full h-full rounded-xl"
+  />
+</div>
+      <div class="p-6">
+        <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-[#d1520e] antialiased">
+          Flashcards Plataform
+        </h5>
+        <p class="block font-sans text-base font-light leading-relaxed text-gray-300 antialiased">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc felis ligula.
+        </p>
+      </div>
+      <div class="p-6 pt-0">
+        <button type="button" class="select-none rounded-lg bg-[#d1520e] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md transition-all hover:bg-[#d1520e]/80 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+          Ver más
+        </button>
       </div>
     </div>
+      
+    </div>
+  </div>
+</section>
+
+
   </div>
 </section>
