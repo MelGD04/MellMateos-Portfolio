@@ -42,22 +42,23 @@ const links = [
 <!-- Navbar móvil -->
 <div 
   id="mobile-navbar" 
-  class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 md:hidden flex items-center justify-around px-2 py-2"
+  class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-xl 
+         border-b border-white/10 md:hidden 
+         flex items-center justify-around px-2 py-2 rounded-b-2xl"
 >
   {links.map((link, idx) => (
-    <div class="flex flex-col items-center flex-1">
+    <div 
+      class={`flex flex-col items-center flex-1 
+              ${idx < links.length - 1 ? "border-r border-gray-400/40" : ""}`}
+    >
       <a 
         href={link.href}
         class="flex flex-col items-center justify-center"
         onclick="event.preventDefault(); var el = document.querySelector(this.getAttribute('href')); if(el) el.scrollIntoView({behavior: 'smooth'});"
       >
-        <span class="material-icons text-2xl" style="color: #d1520e;">{link.icon}</span>
+        <span class="material-icons text-2xl" style="color: white;">{link.icon}</span>
         <span class="text-[0.65rem] text-white mt-1">{link.name}</span>
       </a>
-
-      {idx < links.length - 1 && (
-        <div class="absolute bottom-2 h-6 w-px bg-gray-400 opacity-40"></div>
-      )}
     </div>
   ))}
 </div>
