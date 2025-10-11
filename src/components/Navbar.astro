@@ -11,49 +11,58 @@ const links = [
   id="navbar"
   class="fixed top-4 left-1/2 -translate-x-1/2 z-50 
          w-auto px-6 py-2 
-         bg-black/30 backdrop-blur-xl text-white rounded-full shadow-2xl border border-white/10 transition-all duration-300"
+         bg-black/30 backdrop-blur-xl text-white rounded-full shadow-2xl border border-white/10 transition-all duration-300
+         md:top-4 md:left-1/2 md:-translate-x-1/2
+         md:w-auto
+         md:rounded-full
+         md:px-6 md:py-2
+         md:border
+         md:shadow-2xl
+         md:flex
+         md:items-center
+         md:justify-center
+         md:space-x-6
+         md:bg-black/30
+         md:backdrop-blur-xl
+         hidden md:flex"
 >
-  <div class="flex items-center justify-center space-x-6">
-    
-    <!-- Links (desktop) -->
-    <div class="hidden md:flex space-x-6">
-      {links.map(link => (
-        <a 
-          href={link.href} 
-          class="text-gray-200 hover:text-[#d1520e] transition"
-          onclick="event.preventDefault(); var el = document.querySelector(this.getAttribute('href')); if(el) el.scrollIntoView({behavior: 'smooth'}); if(this.getAttribute('href') === '/') window.location.href = '/'"
-        >
-          {link.name}
-        </a>
-      ))}
-    </div>
-
-    <!-- Menú móvil -->
-<div id="mobile-navbar" class="fixed md:hidden top-0 left-0 w-full w-screen z-50 bg-black/30 backdrop-blur-xl transition-all duration-300 flex items-start">
-  <div class="flex justify-center items-center w-full px-2 py-4 mt-2">
-    {links.map((link, idx) => (
-      <>
-        <a 
-          href={link.href}
-          class="flex flex-col items-center px-2"
-          onclick="event.preventDefault(); var el = document.querySelector(this.getAttribute('href')); if(el) el.scrollIntoView({behavior: 'smooth'});"
-        >
-          <span class="material-icons text-2xl mb-1" style="color: #d1520e;">{link.icon}</span>
-          <span class="text-[0.65rem] text-white">{link.name}</span>
-        </a>
-        {idx < links.length - 1 && (
-          <div class="h-8 w-px bg-gray-400 mx-2 opacity-40 self-center"></div>
-        )}
-      </>
-    ))}
-  </div>
-</div>
-    
+  <!-- Links desktop -->
+  {links.map(link => (
+    <a 
+      href={link.href} 
+      class="text-gray-200 hover:text-[#d1520e] transition"
+      onclick="event.preventDefault(); var el = document.querySelector(this.getAttribute('href')); if(el) el.scrollIntoView({behavior: 'smooth'});"
+    >
+      {link.name}
+    </a>
+  ))}
 </nav>
 
 
+<!-- Navbar móvil -->
+<div 
+  id="mobile-navbar" 
+  class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 md:hidden flex items-center justify-around px-2 py-2"
+>
+  {links.map((link, idx) => (
+    <div class="flex flex-col items-center flex-1">
+      <a 
+        href={link.href}
+        class="flex flex-col items-center justify-center"
+        onclick="event.preventDefault(); var el = document.querySelector(this.getAttribute('href')); if(el) el.scrollIntoView({behavior: 'smooth'});"
+      >
+        <span class="material-icons text-2xl" style="color: #d1520e;">{link.icon}</span>
+        <span class="text-[0.65rem] text-white mt-1">{link.name}</span>
+      </a>
 
- <style>
+      {idx < links.length - 1 && (
+        <div class="absolute bottom-2 h-6 w-px bg-gray-400 opacity-40"></div>
+      )}
+    </div>
+  ))}
+</div>
+
+<style>
   a {
     padding: 0 2px;
     text-decoration: none;
@@ -88,4 +97,4 @@ const links = [
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(12px);
   }
- </style>
+</style>
