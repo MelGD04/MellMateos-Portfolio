@@ -1,9 +1,9 @@
 ---
 const links = [
-  { name: "Home", href: "#Home" },
-  { name: "About", href: "#About" },
-  { name: "Skills", href: "#Skills" },
-  { name: "Projects", href: "#Projects" }
+  { name: "Home", href: "#Home", icon: "home" },
+  { name: "About", href: "#About", icon: "person" },
+  { name: "Skills", href: "#Skills", icon: "code" },
+  { name: "Projects", href: "#Projects", icon: "folder" }
 ];
 ---
 
@@ -28,30 +28,29 @@ const links = [
       ))}
     </div>
 
-    <!-- Botón menú móvil -->
-    <button 
-      id="menu-btn"
-      class="md:hidden p-2 rounded-md text-gray-200 hover:bg-white/10"
-      onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-    >
-      ☰
-    </button>
-  </div>
-
-  <!-- Menú móvil -->
-  <div id="mobile-menu" class="hidden md:hidden bg-black/70 backdrop-blur-xl rounded-b-2xl mt-2 border border-white/10">
-    <div class="px-4 pt-2 pb-3 space-y-2">
-      {links.map(link => (
+    <!-- Menú móvil -->
+<div id="mobile-navbar" class="fixed md:hidden top-0 left-0 w-full w-screen z-50 bg-black/30 backdrop-blur-xl transition-all duration-300 flex items-start">
+  <div class="flex justify-center items-center w-full px-2 py-4 mt-2">
+    {links.map((link, idx) => (
+      <>
         <a 
-          href={link.href} 
-          class="block px-3 py-2 rounded-md text-gray-200 hover:bg-[#d1520e] transition"
-          onclick="event.preventDefault(); const el = document.querySelector(this.getAttribute('href')); if(el) el.scrollIntoView({behavior: 'smooth'}); if(this.getAttribute('href') === '/') window.location.href = '/'"
-        >{link.name}
+          href={link.href}
+          class="flex flex-col items-center px-2"
+          onclick="event.preventDefault(); var el = document.querySelector(this.getAttribute('href')); if(el) el.scrollIntoView({behavior: 'smooth'});"
+        >
+          <span class="material-icons text-2xl mb-1" style="color: #d1520e;">{link.icon}</span>
+          <span class="text-[0.65rem] text-white">{link.name}</span>
         </a>
-      ))}
-    </div>
+        {idx < links.length - 1 && (
+          <div class="h-8 w-px bg-gray-400 mx-2 opacity-40 self-center"></div>
+        )}
+      </>
+    ))}
   </div>
+</div>
+    
 </nav>
+
 
 
  <style>
