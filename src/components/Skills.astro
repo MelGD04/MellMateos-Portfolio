@@ -34,7 +34,7 @@ const frameworks = [
         <div class="flex flex-col md:flex-row gap-8 md:gap-10 mt-6 w-full justify-center items-center md:items-start">
           
           <!-- Card Lenguajes -->
-          <div class="card bg-[#181818]/80 rounded-xl shadow-md border-2 border-[#d1520e] p-6 flex flex-col items-center w-full md:w-[32rem]">
+          <div class="card fade-in-up bg-[#181818]/80 rounded-xl shadow-md border-2 border-[#d1520e] p-6 flex flex-col items-center w-full md:w-[32rem]">
             <h2 class="text-xl md:text-2xl font-bold text-[#d1520e] mb-4">Lenguajes</h2>
             <div class="flex flex-row justify-center items-center gap-6 flex-wrap">
               {languages.map(skill => (
@@ -74,5 +74,18 @@ const frameworks = [
 </section>
 
 <style>
-  .svg-orange { filter: invert(39%) sepia(94%) saturate(1172%) hue-rotate(353deg) brightness(94%) contrast(98%); } .card { border-radius: 32px; transition: box-shadow 0.3s, border 0.3s, backdrop-filter 0.3s, transform 0.3s; } .card:hover { box-shadow: 0 8px 32px 0 rgba(255, 118, 44, 0.25); border: 2px solid #d1520e; backdrop-filter: blur(12px); transform: translateY(-12px);
+  .svg-orange { 
+    filter: invert(39%) sepia(94%) saturate(1172%) hue-rotate(353deg) brightness(94%) contrast(98%); 
+  } 
+  .card { 
+    border-radius: 32px; 
+    transition: box-shadow 0.3s, border 0.3s, 
+    backdrop-filter 0.3s, 
+    transform 0.3s; 
+  } 
+  .card:hover { 
+    box-shadow: 0 8px 32px 0 rgba(255, 118, 44, 0.25); 
+    border: 2px solid #d1520e; backdrop-filter: blur(12px); 
+    transform: translateY(-12px);
+  }
 </style>
