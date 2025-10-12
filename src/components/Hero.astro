@@ -31,15 +31,23 @@
     <span class="material-icons text-lg">folder</span>
     Portfolio
   </a>
-  <a 
-    href="/curriculum.pdf" 
-    target="_blank"
-    class="flex-1 bg-transparent hover:bg-[#d1520e] border-2 border-white text-white 
-           px-3 py-2 rounded-full font-medium transition flex items-center justify-center gap-2 text-sm sm:text-base"
+  <div class="relative inline-block text-left">
+  <button 
+    class="bg-transparent hover:bg-[#d1520e] border-2 border-white text-white 
+           px-4 py-2 rounded-full font-medium transition flex items-center gap-2"
+    onclick="document.getElementById('cv-menu').classList.toggle('hidden')"
   >
     <span class="material-icons text-lg">download</span>
     Download CV
-  </a>
+  </button>
+
+  <!-- Menú desplegable -->
+  <div id="cv-menu" class="absolute mt-2 w-40 bg-black/90 text-white rounded-lg shadow-lg hidden">
+    <a href="/curriculum_es.pdf" download class="block px-4 py-2 hover:bg-[#d1520e]/80">CV Español</a>
+    <a href="/curriculum_en.pdf" download class="block px-4 py-2 hover:bg-[#d1520e]/80">CV English</a>
+  </div>
+</div>
+
 </div>
 
 
