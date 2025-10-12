@@ -1,46 +1,68 @@
-<div class="relative flex w-80 flex-col rounded-xl bg-[#181818]/70 bg-clip-border text-white shadow-lg border-2 border-[#d1520e] mt-10">
-  <!-- Imagen -->
-  <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-lg">
-    <img 
-      src="/images/fp.png" 
-      alt="Flashcards Plataform" 
-      class="object-cover w-full h-full rounded-xl"
-    />
-  </div>
+<section id="Projects" class="relative bg-[#0c0c0c] text-white h-screen">
+  <!-- Overlay oscuro -->
+  <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- Contenido -->
-  <div class="p-6">
-    <h5 class="mb-2 text-xl font-semibold text-[#d1520e]">
-      Flashcards Platform
-    </h5>
+  <section class="min-h-screen flex items-start">
+    <div class="w-[90%] md:w-[80%] mx-auto px-6">
+      <!-- Contenedor: centrado en móvil, izquierda en desktop -->
+      <div class="relative z-10 flex flex-col items-center md:items-start pt-20 space-y-6">
 
-    <!-- Badge -->
-    <span class="inline-block bg-[#d1520e]/20 text-[#d1520e] text-xs font-semibold px-3 py-1 rounded-full mb-2">
-      Frontend Only
-    </span>
+        <!-- Título -->
+        <h1 class="text-5xl md:text-7xl font-bold underline decoration-[#d1520e] decoration-2 pb-6">
+          Projects
+        </h1>
 
-    <p class="text-base font-light text-gray-300">
-      Interactive flashcard platform for dynamic learning and better knowledge retention.
-    </p>
-  </div>
+        <!-- Card -->
+        <div class="relative flex flex-col rounded-xl bg-[#181818]/70 text-white shadow-lg border-2 border-[#d1520e] w-full md:w-80">
+          
+          <!-- Imagen -->
+          <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-lg">
+            <img 
+              src="/images/fp.png" 
+              alt="Flashcards Plataform" 
+              class="object-cover w-full h-full rounded-xl"
+            />
+          </div>
+          
+          <!-- Texto alineado a la izquierda -->
+          <div class="p-6 text-left">
+            <h5 class="mb-2 text-xl font-semibold text-[#d1520e]">
+              Flashcards Platform
+            </h5>
+            <!-- Badge -->
+            <span class="inline-block bg-[#d1520e]/20 text-[#d1520e] text-xs font-semibold px-3 py-1 rounded-full mb-2">
+              Frontend Only
+            </span>
+            <p class="text-base font-light text-gray-300">
+              Interactive flashcard platform for dynamic learning and better knowledge retention.
+            </p>
+          </div>
+          
+          <!-- Botón -->
+          <div class="p-6 pt-0">
+            <button type="button" class="select-none rounded-lg bg-[#d1520e] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md transition-all hover:bg-[#d1520e]/80 focus:opacity-[0.85]">
+              Ver más
+            </button>
+          </div>
 
-  <!-- Botón (se queda como estaba) -->
-  <div class="p-6 pt-0">
-    <button type="button" class="select-none rounded-lg bg-[#d1520e] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md transition-all hover:bg-[#d1520e]/80 focus:opacity-[0.85]">
-      Ver más
-    </button>
-  </div>
+          <!-- Logos en la esquina inferior derecha -->
+          <div class="absolute bottom-4 right-4 flex gap-2 z-20">
+            <span class="bg-[#181818]/70 rounded-full p-2 flex items-center justify-center shadow border border-[#d1520e]">
+              <img src="/logos/angular.svg" alt="Angular" class="w-6 h-6 svg-orange" />
+            </span>
+            <span class="bg-[#181818]/70 rounded-full p-2 flex items-center justify-center shadow border border-[#d1520e]">
+              <img src="/logos/bootstrap.svg" alt="Bootstrap" class="w-6 h-6 svg-orange" />
+            </span>
+          </div>
 
-  <!-- Logos en la esquina inferior derecha -->
-  <div class="absolute bottom-4 right-4 flex gap-2 z-20">
-    <span class="bg-[#181818]/70 rounded-full p-2 flex items-center justify-center shadow border border-[#d1520e]">
-      <img src="/logos/angular.svg" alt="Angular" class="w-6 h-6 svg-orange" />
-    </span>
-    <span class="bg-[#181818]/70 rounded-full p-2 flex items-center justify-center shadow border border-[#d1520e]">
-      <img src="/logos/bootstrap.svg" alt="Bootstrap" class="w-6 h-6 svg-orange" />
-    </span>
-  </div>
-</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</section>
+
+
 
 <style>
 .svg-orange {
