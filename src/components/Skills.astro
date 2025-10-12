@@ -8,19 +8,22 @@ const languages = [
 
 const frameworks = [
   { name: "Astro", logo: "/logos/astro.svg" },
-  { name: "Angular", logo: "/logos/angular.svg" },
+  { name: "Angular", logo: "/logos/angular.svg" },  
   { name: "React", logo: "/logos/react.svg" },
   { name: "Tailwind CSS", logo: "/logos/tailwindcss.svg" },
   { name: "Bootstrap", logo: "/logos/bootstrap.svg" },
 ];
 ---
 
-<section id="Skills" class="relative bg-[#0c0c0c] text-white h-screen">
+<section id="Skills" class="relative bg-[#0c0c0c] text-white min-h-screen pt-24 md:pt-32 pb-24">
   <div class="absolute inset-0 bg-black/50"></div>
 
-  <section class="min-h-screen flex items-center justify-center">
+  <!-- Contenido -->
+  <section class="flex items-center justify-center relative">
     <div class="w-[90%] md:w-[80%] mx-auto px-6">
-      <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left pt-6 space-y-6">
+      <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
+
+      
 
         <!-- Título -->
         <h1 class="text-4xl md:text-6xl font-bold underline decoration-[#d1520e] decoration-2">
@@ -69,21 +72,3 @@ const frameworks = [
     </div>
   </section>
 </section>
-
-<style>
-.svg-orange {
-  filter: invert(39%) sepia(94%) saturate(1172%) hue-rotate(353deg) brightness(94%) contrast(98%);
-}
-
-.card {
-  border-radius: 32px;
-  transition: box-shadow 0.3s, border 0.3s, backdrop-filter 0.3s, transform 0.3s;
-}
-.card:hover {
-  box-shadow: 0 8px 32px 0 rgba(255, 118, 44, 0.25);  
-  border: 2px solid #d1520e;
-  backdrop-filter: blur(12px);
-  transform: translateY(-12px);
-}
-</style>
-  
