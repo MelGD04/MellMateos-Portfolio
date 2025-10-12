@@ -1,48 +1,74 @@
----
----
-<section id="About" class="relative bg-gray-600 text-white h-screen">
-
+<section id="About" class="relative bg-gray-900 text-white h-screen">
+  <!-- Imagen de fondo solo en desktop -->
   <img 
     src="/images/background_about.jpg" 
     alt="About background" 
-    class="absolute inset-0 w-full h-full object-cover"
+    class="hidden md:block absolute inset-0 w-full h-full object-cover object-right"
   />
 
-<div class="absolute inset-0 bg-gradient-to-b from-black/95 via-transparent to-transparent"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent"></div>
+  <!-- Overlays -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/95 via-transparent to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/100 via-transparent to-transparent"></div>
 
-
-  <section class="h-screen flex">
+  <!-- Contenido -->
+  <section class="h-screen flex items-center">
     <div class="w-[90%] md:w-[80%] mx-auto px-6">
-      <div class="relative z-10 flex flex-col items-start text-left h-full pt-20 space-y-3">
+      <div class="relative z-10 flex flex-col items-start text-left h-full pt-20 space-y-6">
 
-        <h1 class="text-5xl md:text-7xl font-bold underline decoration-[#d1520e] decoration-2">
-          ABOUT
-        </h1>
-        <p class="text-lg text-gray-300">
-          mely301104@gmail.com
-        </p>
+        <!-- Encabezado con foto en móviles -->
+        <div class="flex items-center space-x-4 md:space-x-0 md:block">
+          <div>
+            <h1 class="text-4xl md:text-6xl font-bold underline decoration-[#d1520e] decoration-2">
+              ABOUT
+            </h1>
+            <p class="text-base md:text-lg text-gray-300">
+              mely301104@gmail.com
+            </p>
+          </div>
 
-        <p class="text-lg md:text-1xl max-w-1xl">
-          I have over two years of experience in software development, <br>
-          with a strong focus on <strong>frontend development</strong>. Currently, <br>
-          I am pursuing a degree in <strong>Computer Science Engineering</strong>, which has <br>
-          helped me build a solid foundation in programming, problem-solving,<br>
-          and modern development practices.<br>
-          <br>I am eager to apply my skills in a professional environment, contribute <br>
-          to impactful projects, and continue growing as a developer while learning <br>
-          from real-world challenges.
-        </p>
+          <!-- Foto circular solo en móvil -->
+          <div class="md:hidden flex-shrink-0">
+            <img 
+              src="/images/background_about_avatar.jpg" 
+              alt="Profile" 
+              class="w-20 h-20 rounded-full object-cover border-2 border-[#d1520e] shadow-lg"
+            />
+          </div>
+        </div>
 
+        <!-- Texto descriptivo -->
+<!-- Versión para PC (igual a la tuya original) -->
+<p class="hidden md:block text-lg md:text-xl max-w-2xl leading-relaxed">
+  I have over two years of experience in software development, <br>
+  with a strong focus on <strong>frontend development</strong>. Currently, <br>
+  I am pursuing a degree in <strong>Computer Science Engineering</strong>, which has <br>
+  helped me build a solid foundation in programming, problem-solving,<br>
+  and modern development practices.<br><br>
+  I am eager to apply my skills in a professional environment, contribute <br>
+  to impactful projects, and continue growing as a developer while learning <br>
+  from real-world challenges.
+</p>
+
+<!-- Versión para móvil (más fluida y más pequeña) -->
+<p class="block md:hidden text-sm sm:text-base max-w-xl leading-relaxed">
+  I have over two years of experience in software development, with a strong focus on 
+  <strong>frontend development</strong>. Currently, I am pursuing a degree in 
+  <strong>Computer Science Engineering</strong>, which has helped me build a solid 
+  foundation in programming, problem-solving, and modern development practices.
+  <br /><br />
+  I am eager to apply my skills in a professional environment, contribute to impactful 
+  projects, and continue growing as a developer while learning from real-world challenges.
+</p>
+
+
+        <!-- Localización -->
         <div class="flex items-center justify-center mt-4">
           <span class="text-[#d1520e]">───</span>
           <span class="px-4 text-white">La Habana, Cuba</span>
           <span class="text-[#d1520e]">───</span>
-          </div>
+        </div>
 
       </div>
     </div>
   </section>
 </section>
-
-
